@@ -1,0 +1,195 @@
+
+header{
+    display: inline-flex;
+    position: relative;
+    width: 100vw;
+    height: 10vh;
+    justify-content:flex-start;
+    align-items: center;
+    padding: 1vw;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.322);
+}
+.nav__logo{
+    display: inline-flex;
+    position: relative;
+    width: 70vw;
+    height: 80%;
+    justify-content: flex-start;
+    align-items: center;
+    color: rgb(255 96 0);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.nav__logo img{
+    display: block;
+    height: 90%;
+    margin: 2vw;
+}
+nav{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0%;
+    left: -100%;
+    background-color:white;
+    justify-content:center;
+    align-content: space-around;
+    flex-wrap: wrap;
+    z-index: 10;
+}
+.nav__icons{
+    display: inline-flex;
+    position: relative;
+    width: 80%;
+    height: 10%;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom:  1px solid rgba(32, 32, 32, 0.582);
+}
+.nav__icon{
+    display: inline-flex;
+    position: relative;
+    width: 20%;
+    height: 60%;
+    background-color:rgb(255 96 0);
+    border-radius: 2vh;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.nav__icon:hover{
+    box-shadow: -1px 1px 5px 1px rgba(0, 0, 0, 0.322);
+    transform: scale(1.05);
+}
+.nav__container{
+    display: inline-flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    width: 80%;
+    height: 60%;
+    border-radius: 2vh;
+    background-color:rgba(255, 98, 0, 0.336);
+}
+.nav__listitem{
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 10%;
+    background-color:rgb(255 96 0);
+    margin: 3vh;
+    border-radius: 2vh;
+}
+.nav__listitem:hover{
+    box-shadow: -1px 1px 5px 1px rgba(0, 0, 0, 0.322);
+    transform: scale(1.05);
+}
+
+
+
+.menubtn{
+    display: inline-flex;
+    position:absolute;
+    justify-content: center;
+    align-items: center;
+    right: 4vw;
+    top: 3vh;
+    width: 8vw;
+    height: 4vh;
+    transform: scale(1.2);
+    border-radius: 2vw;
+    z-index: 10;
+}
+
+.menubtn:hover{
+    box-shadow: -1px 1px 5px 1px rgba(0, 0, 0, 0.322);
+}
+.menubtn path{stroke:rgb(255 96 0);}
+.path1animation{
+    transform: translate(8vw);
+}
+.path2animation{
+    transform-origin: 20% 40%;
+    transform:rotate(45deg);
+}
+.path3animation{
+    transform-origin:20% 60%;
+    transform: rotate(-45deg);
+}
+
+
+
+/*utility class*/
+.display-inlineflex{
+    display: inline-flex;
+}
+.display-none{
+    display: none;
+}
+.position-fixed{
+    position: fixed;
+}
+.toside{
+    left: 0%;
+}
+.overflow-hidden{
+    overflow: hidden;
+}
+/*querys*/
+@media screen and (min-width:550px){
+    .nav__logo{font-size: 2rem;}
+    .menubtn{width: 5vw;}
+    .nav__icon{width: 15%;}
+    .nav__icons{width: 60%;}
+}
+@media screen and (min-width:900px){
+    .menubtn{display: none;}
+    header{
+        padding: 0;
+        justify-content: space-between;
+    }
+    .nav__logo{
+        width: 35%;
+        height: 100%;
+    }
+    nav{display: inline-flex;position: relative;left: initial;}
+    nav{
+        width: 65%;
+        height: 100%;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: row-reverse;
+    }
+    .nav__container{
+        width: 50%;
+        height: 100%;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: rgba(255, 255, 255, 0);
+    }
+    .nav__listitem{
+        background-color: rgba(255, 255, 255, 0);
+        width: 20%;
+        height: 60%;
+        color:rgb(255 96 0);
+        font-size: 1.2rem;
+    }
+    .nav__listitem:hover{
+        background-color:rgb(255 96 0);
+        color: white;
+    }
+    .nav__icons{
+        width: 30%;
+        height: 100%;
+        border: none; 
+    }
+    .nav__icon{
+        width: 20%;
+    }
+}

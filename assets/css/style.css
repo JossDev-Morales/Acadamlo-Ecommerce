@@ -43,40 +43,26 @@ body{
   flex-wrap: wrap;
   justify-content: center;
   align-content: space-between;
+  font-family: var(--body-font);
+  color:  var(--body-color);
 }
-header{
-  display: inline-flex;
-  position: relative;
-  width: 100vw;
-  height: 8vh;
 
-}
-nav{
-  display: inline-flex;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-}
+
+
+
 .homesection{
   display: inline-flex;
   width: 100%;
   height: 90vh;
-  background-color: aquamarine;
   flex-wrap: wrap;
   justify-content: center;
   align-content: space-around;  
+  overflow: hidden;
 }
-.homesection main{
+.section__feed{
   display: inline-flex;
   width: 100%;
-  height: 40%;
-  background-color: rgb(125, 224, 224);
-}
-.section__feeder{
-  display: inline-flex;
-  width: 100%;
-  min-height: 60vh;
+  min-height: 50%;
   flex-wrap: wrap;
   justify-content: center;
   align-content: space-between;
@@ -85,5 +71,5 @@ footer{
   display: inline-flex;
   width: 100%;
   height: 15vh;
-  background-color: black;
+  background-color: rgb(24, 24, 24);
 }

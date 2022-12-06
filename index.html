@@ -5,36 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/style.css">
-    <title>Academlo Store</title>
+    <link rel="stylesheet" href="/assets/css/nav.css">
+    <link rel="stylesheet" href="/assets/css/mainSlider.css">
+    <script src="https://kit.fontawesome.com/81ea973cf5.js" crossorigin="anonymous"></script>
+    <title>Deli Pizza </title>
 </head>
 <body>
 <header>
+    <div class="nav__logo">
+      <img src="/assets/images/favicon.png" alt="">  
+      Academlo's pizzas
+    </div>
     <nav>
-      <div class="nav__container">
-        <div class="nav__container__logo"></div>
-        <div class="nav__container__home"></div>
-        <div class="nav__container__menu"></div>
-      </div>
       <div class="nav__icons">
-        <div class="nav__icons__theme"></div>
-        <div class="nav__icons__order"></div>
-        <div class="nav__icons__users"></div>
-      </div>
+        <div class="nav__icon nav__icons__theme"><i class="fa-solid fa-moon"></i></div>
+        <div class="nav__icon nav__icons__order"><i class="fa-brands fa-shopify"></i></div>
+        <div class="nav__icon nav__icons__users"><i class="fa-solid fa-user"></i></div>
+      </div> 
+      <div class="nav__container">
+        <div class="nav__listitem nav__container__home">Home</div>
+        <div class="nav__listitem nav__container__menu">Menu</div>
+      </div> 
     </nav>
+
+    
+    <div class="menubtn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path id="path1" d="M3 12H21" stroke="#242635" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path id="path2" d="M3 6H21" stroke="#242635" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path id="path3" d="M3 18H21" stroke="#242635" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
 </header>
   <section class="homesection">
-    <main>
-      <div class="slider"></div>
+    <main class="slider">
+      <!-- <div class="slider__card">
+        <img src="/assets/images/PizzaQueso.jfif" alt="">
+        <div class="card__nameproduct">Pizza de Queso</div>
+        <div class="card__info">
+          <div class="card__up-down"><i class="fa-solid fa-chevron-up"></i></div>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam ex, id iste culpa soluta, eveniet velit eaque ea sed esse alias consectetur!</p>
+          <span>$15</span>
+        </div>
+        <div class="card__btn card__shopp"><i class="fa-brands fa-shopify"></i></div>
+        <div class="card__btn card__like"><i class="fa-solid fa-heart"></i></div>
+      </div> -->
     </main>
-    <div class="section__feeder"></div>
-  </section>
-  <!-- <section class="listsection"> -->
+    <div class="section__feed">
 
+
+
+    </div>
   </section>
+  <div class="Users">
+    <h2 id="T-Users"></h2>
+    
+    </div>
+  </div>
+  <div class="Order">
+
+  </div>
+
 <footer>
 
 </footer>
-</div>
+
+<script src="/assets/js/users.js"></script>
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/mainslider.js"></script>
 </body>
 </html>
     <!--========== Logo Academlo con contorno ==========-->
