@@ -1,0 +1,91 @@
+.section__offers{
+    display: inline-flex;
+    width: 100%;
+    min-height: 50%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.section__offers h2{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    height: auto;
+    width: 80%;
+    margin: 0px auto 50px auto;
+    color: rgb(255 96 0);
+    font-size: 1.5rem;
+
+}
+
+.box-offers{
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    height: 80%;
+    width: 100%;
+    text-align: center;
+}
+
+.box-food{
+    display: inline-flex;
+    flex-wrap: wrap;
+    height: 70%;
+    width: 25%;
+    justify-content: center;
+    align-content: space-around;
+    box-shadow: 0 0 5px 0px rgba(36, 35, 35, 0.399);
+    border-radius: 2vw;
+}
+
+.box-food-offer{
+    color: rgb(255 96 0);
+    display: inline-flex;
+    font-size: 4vw;
+    position: relative;
+    height: fit-content;
+    width: 90%;
+    justify-content: center;
+    
+}
+
+.box-food-price{
+    color: rgb(41, 40, 40);
+    font-size: 4vw;
+    width: 50%;
+    height:fit-content;
+    margin: 0 2vh;
+    background-color: rgba(251, 140, 71, 0.848);
+    border-radius: 2vw;
+    text-align: center;
+
+}
+
+.box-food img{
+    width: 35%;
+    
+}
+
+@media screen and (min-width : 550px){
+    .section__offers h2{
+        font-size: 2rem;
+        margin: 0 auto;
+    }
+
+    .box-food-price{
+        font-size: 3.5vw;
+        margin: 0 2vw;
+    }
+}
+
+@media screen and (min-width : 900px) {
+    .section__offers h2{
+        font-size: 2.5rem;
+    }
+
+    .box-food-price{
+        font-size: 3.5vw;
+        margin: 0 3vw;
+    }
+}
