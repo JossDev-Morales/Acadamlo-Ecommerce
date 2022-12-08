@@ -73,3 +73,19 @@ footer{
   height: 15vh;
   background-color: rgb(24, 24, 24);
 }
+/*utility class*/
+.display-inlineflex{
+  display: inline-flex;
+}
+.display-none{
+  display: none;
+}
+.position-fixed{
+  position: fixed;
+}
+.toside{
+  left: 0%;
+}
+.overflow-hidden{
+  overflow: hidden;
+}

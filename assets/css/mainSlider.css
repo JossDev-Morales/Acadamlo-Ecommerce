@@ -20,6 +20,7 @@
 }
 .slider__card img{
     width: 100%;
+    object-fit: cover;
 }
 .card__nameproduct{
     display: inline-flex;

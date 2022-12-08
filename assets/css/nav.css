@@ -8,6 +8,7 @@ header{
     align-items: center;
     padding: 1vw;
     box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.322);
+    z-index: 10;
 }
 .nav__logo{
     display: inline-flex;
@@ -57,6 +58,7 @@ nav{
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 .nav__icon:hover{
     box-shadow: -1px 1px 5px 1px rgba(0, 0, 0, 0.322);
@@ -83,6 +85,7 @@ nav{
     background-color:rgb(255 96 0);
     margin: 3vh;
     border-radius: 2vh;
+    cursor: pointer;
 }
 .nav__listitem:hover{
     box-shadow: -1px 1px 5px 1px rgba(0, 0, 0, 0.322);
@@ -103,6 +106,7 @@ nav{
     transform: scale(1.2);
     border-radius: 2vw;
     z-index: 10;
+    cursor: pointer;
 }
 
 .menubtn:hover{
@@ -123,22 +127,7 @@ nav{
 
 
 
-/*utility class*/
-.display-inlineflex{
-    display: inline-flex;
-}
-.display-none{
-    display: none;
-}
-.position-fixed{
-    position: fixed;
-}
-.toside{
-    left: 0%;
-}
-.overflow-hidden{
-    overflow: hidden;
-}
+
 /*querys*/
 @media screen and (min-width:550px){
     .nav__logo{font-size: 2rem;}
@@ -170,7 +159,7 @@ nav{
         height: 100%;
         flex-wrap: nowrap;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: flex-end;
         background-color: rgba(255, 255, 255, 0);
     }
     .nav__listitem{

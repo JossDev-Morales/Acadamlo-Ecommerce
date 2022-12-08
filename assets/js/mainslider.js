@@ -1,16 +1,17 @@
-let menuPizzas=[{link:"/assets/images/PizzaQueso.jfif", name:"Pizza De Queso", info:"Una rica pizza Para toda la familia como no.", price:15},
-{link:"/assets/images/PizzaQueso.jfif", name:"Pizza De Peperoni", info:"Una rica pizza Para toda la familia como no.", price:20},
-{link:"/assets/images/PizzaQueso.jfif", name:"Pizza De Champiñon", info:"Una rica pizza Para toda la familia como no.", price:22},
-{link:"/assets/images/PizzaQueso.jfif", name:"Pizza Hawaiana", info:"Una rica pizza Para toda la familia como no.", price:18}]
+import { getAllProducts,Menu, getAllPizzas } from "../js/Menu.js";
+let menuPizzas=[{link:"assets/images/pizza/Pizza-tocino.png", name:"Pizza De Queso", info:"Una rica pizza Para toda la familia como no.", price:15},
+{link:"assets/images/pizza/Pizza-tocino.png", name:"Pizza De Peperoni", info:"Una rica pizza Para toda la familia como no.", price:20},
+{link:"assets/images/pizza/Pizza-tocino.png", name:"Pizza De Champiñon", info:"Una rica pizza Para toda la familia como no.", price:22},
+{link:"assets/images/pizza/Pizza-tocino.png", name:"Pizza Hawaiana", info:"Una rica pizza Para toda la familia como no.", price:18}]
 let slidercont=document.querySelector(".slider")
 function cardConstructor(array,position) {
     const card=document.createElement("div")
     card.classList.add("slider__card", "cardmove2")
     const img=document.createElement("img")
-    img.src=array[position].link
+    img.src=array[position].img
     const namecard=document.createElement("div")
     namecard.classList.add("card__nameproduct")
-    namecard.textContent=array[position].name
+    namecard.textContent=array[position].Product
     const info=document.createElement("div")
     info.classList.add("card__info")
     const up_down=document.createElement("div")
@@ -18,7 +19,7 @@ function cardConstructor(array,position) {
     const i=document.createElement("i")
     i.classList.add("fa-solid","fa-chevron-up")
     const p=document.createElement("p")
-    p.textContent=array[position].info
+    p.textContent=array[position].inf
     const span=document.createElement("span")
     span.textContent=`$${array[position].price}`
     const btnshop=document.createElement("div")
@@ -58,12 +59,11 @@ function cardConstructor(array,position) {
 document.addEventListener("DOMContentLoaded",()=>{
     let position=0  
     setInterval(() => {
-        slidercont.insertAdjacentElement("afterbegin",cardConstructor(menuPizzas,position))
-        if (position<menuPizzas.length-1) {
+        slidercont.insertAdjacentElement("afterbegin",cardConstructor(getAllPizzas(),position))
+        if (position<getAllPizzas().length-1) {
             position++
         }else{position=0}
-        console.log(position,menuPizzas.length-1);
     }, 21000);
-    slidercont.insertAdjacentElement("afterbegin",cardConstructor(menuPizzas,position))
+    slidercont.insertAdjacentElement("afterbegin",cardConstructor(getAllPizzas(),position))
     position++
 })
