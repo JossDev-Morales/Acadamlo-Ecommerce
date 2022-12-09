@@ -44,7 +44,26 @@ function carritoconstructor (array) {
     iX.classList.add("fa-solid","fa-xmark")
     bmclose.insertAdjacentElement("beforeend",iX)
     //events
-
+        bmclose.addEventListener("click",(e)=>{
+            ordercontainer.removeChild(e.target.parentElement)
+            let users=getUsers()
+  let accesKey=localStorage.getItem("currentAK")
+  users.forEach(e =>{
+    if (e.accesKey==accesKey) {
+      let iter =0
+      e.order.forEach(el =>{
+        if (el.Product==array.Product) {
+         if (iter==0) {
+          iter++
+          e.order.splice(e.order.indexOf(el),1)
+          localStorage.setItem("Users",JSON.stringify(users))
+          
+         }
+        }
+      })
+    }
+  })
+        })
     // constructor
     bmcarrito.insertAdjacentElement("beforeend", bmimg)
     bmcarrito.insertAdjacentElement("beforeend", bmh2)
@@ -104,5 +123,5 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     });
     console.log(price);
-    ordercontainer.insertAdjacentElement("afterbegin",buyit(getOrder(),price))
-})
+    ordercontainer.insertAdjacentElement("afterbegin",buyit(getOrder(),price))})
+export{carritoconstructor,ordercontainer}

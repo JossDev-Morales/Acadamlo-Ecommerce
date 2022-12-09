@@ -94,6 +94,18 @@ footer{
   width: 100%;
   height: 15vh;
   background-color: var(--footercolor);
+  justify-content: flex-start;
+  align-items: center;
+}
+footer p, a{
+  margin: 3vw;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+footer a{
+  cursor: pointer;
 }
 /*utility class*/
 .display-inlineflex{

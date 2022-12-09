@@ -1,4 +1,5 @@
 import {getlikes,getUsers,getOrder,pushlike,pushorder,removelike,removeorder} from "../js/users.js";
+import { carritoconstructor,ordercontainer } from "../js/Order.js";
 let Menu={
     "Pizzas": [
         {Product:"Bacon-Crunch", img:"assets/images/pizza/Pizza-tocino.png", inf:"Pizza con tocino, Carne, queso mozzarella y mas tocino", price:12},
@@ -178,7 +179,7 @@ function productconstructor (array) {
         btnshop.addEventListener("click",()=>{
             if (btnshop.classList.contains("onorder")==false) {
                 btnshop.classList.add("onorder")
-                pushorder(array)
+                pushorder(array,ordercontainer)
             }else{
                 btnshop.classList.remove("onorder")
                 removeorder(array)

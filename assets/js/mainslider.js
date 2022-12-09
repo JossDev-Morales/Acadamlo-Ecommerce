@@ -1,4 +1,5 @@
 import { getAllProducts,Menu, getAllPizzas} from "../js/Menu.js";
+import { carritoconstructor,ordercontainer } from "../js/Order.js";
 import {getlikes,getUsers,getOrder,pushlike,removelike,pushorder,removeorder} from "../js/users.js";
 let menuPizzas=[{link:"assets/images/pizza/Pizza-tocino.png", name:"Pizza De Queso", info:"Una rica pizza Para toda la familia como no.", price:15},
 {link:"assets/images/pizza/Pizza-tocino.png", name:"Pizza De Peperoni", info:"Una rica pizza Para toda la familia como no.", price:20},
@@ -70,7 +71,7 @@ function cardConstructor(array,position) {
         btnshop.addEventListener("click",()=>{
             if (btnshop.classList.contains("onorder")==false) {
                 btnshop.classList.add("onorder")
-                pushorder(array[position])
+                pushorder(array[position],ordercontainer)
             }else{
                 btnshop.classList.remove("onorder")
                 removeorder(array[position])

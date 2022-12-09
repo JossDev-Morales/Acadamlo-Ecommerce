@@ -1,3 +1,4 @@
+import { carritoconstructor,ordercontainer } from "../js/Order.js";
 //require
 '<i class="fa-solid fa-key"></i>'
 if (localStorage.getItem("Users")==undefined){
@@ -318,12 +319,13 @@ function pushlike(element) {
   })
   localStorage.setItem("Users",JSON.stringify(users))
 }
-function pushorder(element) {
+function pushorder(element,container) {
   let users=getUsers()
   let accesKey=localStorage.getItem("currentAK")
   users.forEach(e =>{
     if (e.accesKey==accesKey) {
       e.order.push(element)
+      container.insertAdjacentElement("beforeend",carritoconstructor(element))
     }
   })
   localStorage.setItem("Users",JSON.stringify(users))
