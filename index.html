@@ -4,20 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/loader.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/nav.css">
     <link rel="stylesheet" href="/assets/css/mainSlider.css">
     <link rel="stylesheet" href="/assets/css/user.css">
     <link rel="stylesheet" href="/assets/css/Order.css">
     <link rel="stylesheet" href="/assets/css/offers.css">
+    <link rel="stylesheet" href="/assets/css/menu.css">
     <script src="https://kit.fontawesome.com/81ea973cf5.js" crossorigin="anonymous"></script>
-    <title>Deli Pizza </title>
+    <link rel="shortcut icon" href="/assets/images/pizza.png" type="image/x-icon">
+    <title>Hot Pizza</title>
 </head>
-<body>
+<body class="light overflownone">
+  <div class="loadercont">
+    <div class="lds-dual-ring"></div>
+  </div>
 <header>
+  
     <div class="nav__logo">
-      <img src="/assets/images/favicon.png" alt="">  
-      Academlo's pizzas
+      <img src="/assets/images/pizza.png" alt="" srcset="">
+      <h1>Hot Pizza</h1>
     </div>
     <nav>
       <div class="nav__icons">
@@ -26,8 +33,8 @@
         <div class="nav__icon nav__icons__users"><i class="fa-solid fa-user"></i></div>
       </div> 
       <div class="nav__container">
-        <div class="nav__listitem nav__container__home">Home</div>
-        <div class="nav__listitem nav__container__menu">Menu</div>
+        <div id="btnhome" class="nav__listitem nav__container__home">Home</div>
+        <div id="btnmenu" class="nav__listitem nav__container__menu">Menu</div>
       </div> 
     </nav>
 
@@ -40,28 +47,43 @@
         </svg>
     </div>
 </header>
-  <section class="homesection">
+  <section id="conthome" class="homesection">
     <main class="slider">
     </main>
-    <div class="section__offers">
-      <h2>Ofertas!</h2>
-      <div class="box-offers">
-       <div class="box-food">
-        <h5 class="box-food-offer">2x1</h5>
-        <img src="assets/images/promociones.png" alt="">
-        <p class="box-food-price">$7</p>
-       </div>
-       <div class="box-food">
-        <h5 class="box-food-offer">Compra 2, lleva 1 GRATIS</h5>
-        <img src="assets/images/caja-de-pizza.png" alt="">
-        <p class="box-food-price">$19.99</p>
-       </div>
-       <div class="box-food">
-        <h5 class="box-food-offer">Combo Familia</h5>
-        <img src="assets/images/marketing.png" alt="">
-        <p class="box-food-price">$34.99</p>
-       </div>
+    <div class="offers">
+      <svg xmlns="http://www.w3.org/2000/svg" width="320" height="16" viewBox="0 0 320 16" class="mcd-svg-drops-mobile is-hidden-desktop"><g fill="none" fill-rule="evenodd"><g fill="#FFBC0D"><g><path d="M241 0h2.673c8.214.335 12.377 8.872 21.064 7.531 3.134-.483 5.743-2.316 9.017-2.343 7.835-.063 11.681 8.966 18.99 10.531 2.192.47 4.494.408 6.522-.623 1.779-.903 3.16-2.399 4.358-3.963 2.07-2.705 3.912-5.636 6.386-8.004 1.346-1.286 2.97-2.481 4.815-2.874.716-.153 1.44-.217 2.165-.255H320M0 0c28.903 0 37.863 13 50.87 13C66.478 13 76.304 0 98.56 0c16.258 0 21.298 7.313 28.614 7.313C135.954 7.313 141.482 0 154 0" transform="translate(0 -198) translate(0 198)"></path></g></g></g></svg>
+      <h2>Pizza Time</h2>
+      <img src="/assets/images/caja-de-pizza.png" alt="">
+      <p>2x1 en pizzas de 12 dolares</p>
+      <span>$12</span>
+    </div>
+    <div class="offers">
+      <svg xmlns="http://www.w3.org/2000/svg" width="320" height="16" viewBox="0 0 320 16" class="mcd-svg-drops-mobile is-hidden-desktop"><g fill="none" fill-rule="evenodd"><g fill="#FFBC0D"><g><path d="M241 0h2.673c8.214.335 12.377 8.872 21.064 7.531 3.134-.483 5.743-2.316 9.017-2.343 7.835-.063 11.681 8.966 18.99 10.531 2.192.47 4.494.408 6.522-.623 1.779-.903 3.16-2.399 4.358-3.963 2.07-2.705 3.912-5.636 6.386-8.004 1.346-1.286 2.97-2.481 4.815-2.874.716-.153 1.44-.217 2.165-.255H320M0 0c28.903 0 37.863 13 50.87 13C66.478 13 76.304 0 98.56 0c16.258 0 21.298 7.313 28.614 7.313C135.954 7.313 141.482 0 154 0" transform="translate(0 -198) translate(0 198)"></path></g></g></g></svg>
+      <h2>Complecombo</h2>
+      <img src="/assets/images/caja-de-pizza.png" alt="">
+      <p>Pizza + 2 complementos a solo</p>
+      <span>$15</span>
+    </div>
+    <div class="offers">
+      <svg xmlns="http://www.w3.org/2000/svg" width="320" height="16" viewBox="0 0 320 16" class="mcd-svg-drops-mobile is-hidden-desktop"><g fill="none" fill-rule="evenodd"><g fill="#FFBC0D"><g><path d="M241 0h2.673c8.214.335 12.377 8.872 21.064 7.531 3.134-.483 5.743-2.316 9.017-2.343 7.835-.063 11.681 8.966 18.99 10.531 2.192.47 4.494.408 6.522-.623 1.779-.903 3.16-2.399 4.358-3.963 2.07-2.705 3.912-5.636 6.386-8.004 1.346-1.286 2.97-2.481 4.815-2.874.716-.153 1.44-.217 2.165-.255H320M0 0c28.903 0 37.863 13 50.87 13C66.478 13 76.304 0 98.56 0c16.258 0 21.298 7.313 28.614 7.313C135.954 7.313 141.482 0 154 0" transform="translate(0 -198) translate(0 198)"></path></g></g></g></svg>
+      <h2>Wombo Combo</h2>
+      <img src="/assets/images/caja-de-pizza.png" alt="">
+      <p>Combo familiar + paquete infantil</p>
+      <span>$30</span>
+    </div>
   </section>
+  <section id="contmenu" class="menusection">
+    <div class="btn__menuchange" id="change1">Pizzas</div>
+    <div class="btn__menuchange" id="change2">Complementos</div>
+    <div class="btn__menuchange" id="change3">Postres</div>
+    <div class="btn__menuchange" id="change4">Dips</div>
+    <div class="btn__menuchange" id="change5">Bebidas</div>
+    <div class="menusecs menu_sec1 display"></div>
+    <div class="menusecs menu_sec2"></div>
+    <div class="menusecs menu_sec3"></div>
+    <div class="menusecs menu_sec4"></div>
+    <div class="menusecs menu_sec5"></div>
+  </section> 
   <div class="UsersCont">
     
   </div>
@@ -73,7 +95,7 @@
 <footer>
 
 </footer>
-
+<script src="/assets/js/loader.js"></script>
 <script src="/assets/js/users.js" type="module"></script>
 <script src="/assets/js/nav.js" type="module"></script>
 <script src="/assets/js/mainslider.js" type="module"></script>

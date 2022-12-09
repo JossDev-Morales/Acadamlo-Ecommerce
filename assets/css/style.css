@@ -1,37 +1,42 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-
+@font-face {
+  font-family: "PizzaFont";
+  src: url(/assets/fonts/hotpizza.ttf);
+}
 /*=============== VARIABLES CSS ===============*/
-:root {
-  /*========== Colors ==========*/
-  --first-color: hsl(354, 78%, 60%);
-  --button-color: hsl(0, 0%, 17%);
-  --button-color-alt: hsl(0, 0%, 21%);
-  --card-color: hsl(0, 0%, 90%);
-  --title-color: hsl(0, 0%, 15%);
-  --text-color: hsl(0, 0%, 35%);
-  --text-color-light: hsl(0, 0%, 55%);
-  --body-color: hsl(206, 4%, 97%);
-  --container-color: #fff;
-  --border-color: hsl(0, 0%, 94%);
-
+.light{
+  --color1:rgb(255 96 0);
+  --color2:rgb(255, 255, 255);
+  --color3:rgb(255, 139, 67);
+  --textcolor:rgb(255, 255, 255);
+  --color4:rgb(255, 188, 13);
+  --color5:rgb(255, 139, 67);
+  --background: url(/assets/images/background.png);
+  --footercolor:rgb(128, 128, 128);
   /*========== Font and typography ==========*/
   --body-font: 'Roboto', sans-serif;
+  --pizza-font:"PizzaFont";
+}
+.dark{
+  --color1:rgb(255 96 0);
+  --color2: rgb(63, 63, 63);
+  --color3:rgb(255, 139, 67);
+  --textcolor:rgb(255, 255, 255);
+  --color4:rgb(255, 188, 13);
+  --color5: rgb(49, 49, 49);
+  --footercolor:rgb(24, 24, 24);
+  --background: url(/assets/images/background-dark.png);
+  /*========== Font and typography ==========*/
+  --body-font: 'Roboto', sans-serif;
+  --pizza-font:"PizzaFont";
 }
 
-/*=============== THEME ===============*/
-/*========== Variables Dark theme ==========*/
-/*
-    --first-color: hsl(182, 53%, 74%);
-    --button-color: hsl(246, 16%, 12%);
-    --button-color-alt: hsl(0, 0%, 28%);
-    --card-color: hsla(246, 16%, 5%, .5);
-    --title-color: hsl(0, 0%, 95%);
-    --text-color: hsl(0, 0%, 75%);
-    --body-color: hsl(249, 19%, 14%);
-    --container-color: hsl(246, 16%, 12%);
-    --border-color: hsl(0, 0%, 20%);
-*/
+   
+
+body{
+  background-color: rgb(63, 63, 63);
+}
 * {
   padding: 0;
   margin: 0;
@@ -45,6 +50,8 @@ body{
   align-content: space-between;
   font-family: var(--body-font);
   color:  var(--body-color);
+  background-color: var(--color2);
+  color: var(--textcolor);
 }
 
 
@@ -52,12 +59,27 @@ body{
 
 .homesection{
   display: inline-flex;
+  position: relative;
   width: 100%;
-  height: 90vh;
+  height: 160vh;
   flex-wrap: wrap;
   justify-content: center;
   align-content: space-around;  
-  overflow: hidden;
+  background-image: var(--background);
+  background-size: 6%;
+  top: 0%;
+  padding-bottom: 5vw;
+  flex-wrap: wrap;
+}
+.menusection{
+  display: none;
+  width: 100%;
+  height: 180vh;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;  
+  background-image: var(--background);
+  background-size: 6%;
 }
 .section__feed{
   display: inline-flex;
@@ -71,7 +93,7 @@ footer{
   display: inline-flex;
   width: 100%;
   height: 15vh;
-  background-color: rgb(24, 24, 24);
+  background-color: var(--footercolor);
 }
 /*utility class*/
 .display-inlineflex{
@@ -88,4 +110,15 @@ footer{
 }
 .overflow-hidden{
   overflow: hidden;
+}
+.liked{
+  color: rgb(243, 51, 44);
+}
+.box-menu-product{
+        width: 36.8%;
+    }
+@media screen and (min-width:900px){
+  body{
+    font-size: 25px;
+  }
 }

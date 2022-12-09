@@ -27,11 +27,13 @@ Userbtn.addEventListener("click",()=>{
     setTimeout(() => {
       userContainer.classList.remove("display-inlineflex2")
     }, 400);
+    document.body.classList.remove("overflow-hidden")
   }else{
     userContainer.classList.add("display-inlineflex2")
     setTimeout(() => {
       userContainer.classList.add("UsersCont-move")
     }, 100);
+    document.body.classList.add("overflow-hidden")
   }
  }
 })
@@ -49,7 +51,7 @@ function closebtn(cont) {
   return closebtn
 }
 //
-function AlertCard(title,message,src) {
+function AlertCard(title,message) {
   const alertCard=document.createElement("div")
   alertCard.classList.add("alertcard")
   const alerttitle=document.createElement("h2")
@@ -64,6 +66,9 @@ function AlertCard(title,message,src) {
   setTimeout(() => {
     alertCard.classList.add("alertcard-move2")
   }, 4000);
+  setTimeout(() => {
+    document.body.removeChild(alertCard)
+  }, 4500);
   document.body.insertAdjacentElement("beforeend",alertCard)
 }
 
@@ -189,6 +194,7 @@ function NoUserActive(container) {
 }
 function FindUser() {
   let users=getUsers()
+  let user
   let accesKey=localStorage.getItem("currentAK")
   users.forEach(e =>{
     if (e.accesKey==accesKey) {
@@ -217,13 +223,7 @@ function UserActive(User, Container) {
 }
 function getLists(User) {
   const listsCont=document.createElement("div")
-  const configcont=document.createElement("div")
-  configcont.classList.add("users1__listcont")
   listsCont.classList.add("users1__listcont")
-  const confbtn=document.createElement("div")
-  confbtn.classList.add("users1__confbtn")
-  const confi=document.createElement("i")
-  confi.classList.add("fa-solid","fa-sliders")
   const btnlike =document.createElement("div")
   btnlike.classList.add("Users1__listsbtn")
   const iLike=document.createElement("i")
@@ -236,15 +236,12 @@ function getLists(User) {
   spanlike.textContent=User.like.length
   const spanorder=document.createElement("span")
   spanorder.textContent=User.order.length
-  configcont.insertAdjacentElement("beforeend",confbtn)
-  confbtn.insertAdjacentElement("beforeend",confi)
   btnlike.insertAdjacentElement("beforeend",iLike)
   btnlike.insertAdjacentElement("beforeend",spanlike)
   btnshop.insertAdjacentElement("beforeend",ishop)
   btnshop.insertAdjacentElement("beforeend",spanorder)
   listsCont.insertAdjacentElement("beforeend",btnlike)
   listsCont.insertAdjacentElement("beforeend",btnshop)
-  listsCont.insertAdjacentElement("beforeend",configcont)
   return listsCont
 }
 function Pinformation(User) {
@@ -252,15 +249,12 @@ function Pinformation(User) {
   Pinformation.classList.add("User1__infcont")
   const title=document.createElement("h3")
   title.textContent="Informacion Personal"
-  const infElementU=document.createElement("div")
-  infElementU.classList.add("user1__infElement")
-  infElementU.textContent=User.username
   const infElementN=document.createElement("div")
-  infElementN.textContent=User.name
+  infElementN.textContent="Nombre: "+User.name
   infElementN.classList.add("user1__infElement")
   const infElementM=document.createElement("div")
   infElementM.classList.add("user1__infElement")
-  infElementM.textContent=User.mail
+  infElementM.textContent="Mail: "+User.mail
   Pinformation.insertAdjacentElement("beforeend", title)
   Pinformation.insertAdjacentElement("beforeend",infElementN)
   Pinformation.insertAdjacentElement("beforeend",infElementM)
@@ -279,10 +273,10 @@ function Uinformation(User) {
   title.textContent="Informacion De Usuario"
   const infElementP=document.createElement("div")
   infElementP.classList.add("user1__infElement")
-  infElementP.textContent=password
+  infElementP.textContent="Contraseña: "+password
   const infElementA=document.createElement("div")
   infElementA.classList.add("user1__infElement")
-  infElementA.textContent=User.accesKey
+  infElementA.textContent="AccesKey: "+User.accesKey
   Pinformation.insertAdjacentElement("beforeend", title)
   Pinformation.insertAdjacentElement("beforeend", infElementP)
   Pinformation.insertAdjacentElement("beforeend",infElementA)
@@ -291,6 +285,84 @@ function Uinformation(User) {
 }
 function changeData(Type,) {
   
+}
+function getlikes(params) {
+  let users=getUsers()
+  let likes
+  let accesKey=localStorage.getItem("currentAK")
+  users.forEach(e =>{
+    if (e.accesKey==accesKey) {
+     likes= e.like
+    }
+  })
+  return likes
+}
+function getOrder() {
+  let users=getUsers()
+  let order
+  let accesKey=localStorage.getItem("currentAK")
+  users.forEach(e =>{
+    if (e.accesKey==accesKey) {
+      order= e.order
+    }
+  })
+  return order
+}
+function pushlike(element) {
+  let users=getUsers()
+  let accesKey=localStorage.getItem("currentAK")
+  users.forEach(e =>{
+    if (e.accesKey==accesKey) {
+      e.like.push(element)
+    }
+  })
+  localStorage.setItem("Users",JSON.stringify(users))
+}
+function pushorder(element) {
+  let users=getUsers()
+  let accesKey=localStorage.getItem("currentAK")
+  users.forEach(e =>{
+    if (e.accesKey==accesKey) {
+      e.order.push(element)
+    }
+  })
+  localStorage.setItem("Users",JSON.stringify(users))
+}
+function removelike(element) {
+  let users=getUsers()
+  let accesKey=localStorage.getItem("currentAK")
+  users.forEach(e =>{
+    if (e.accesKey==accesKey) {
+      let iter =0
+      e.like.forEach(el =>{
+        if (el.Product==element.Product) {
+         if (iter==0) {
+          iter++
+          e.like.splice(e.like.indexOf(el),1)
+          localStorage.setItem("Users",JSON.stringify(users))
+         }
+        }
+      })
+    }
+  })
+}
+function removeorder(element) {
+  let users=getUsers()
+  let accesKey=localStorage.getItem("currentAK")
+  users.forEach(e =>{
+    if (e.accesKey==accesKey) {
+      let iter =0
+      e.order.forEach(el =>{
+        if (el.Product==element.Product) {
+         if (iter==0) {
+          iter++
+          e.order.splice(e.order.indexOf(el),1)
+          localStorage.setItem("Users",JSON.stringify(users))
+         }
+        }
+      })
+    }
+  })
 }
 //start
 let Status
@@ -306,3 +378,4 @@ if (Status==0) {
 if (Status==1) {
   FindUser()
 }
+export{getlikes,getUsers,getOrder,pushlike,pushorder,removelike,removeorder,FindUser,AlertCard,Status}

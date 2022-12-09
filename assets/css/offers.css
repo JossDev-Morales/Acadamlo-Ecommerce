@@ -1,91 +1,66 @@
-.section__offers{
+.offers{
     display: inline-flex;
-    width: 100%;
-    min-height: 50%;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.section__offers h2{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    height: auto;
-    width: 80%;
-    margin: 0px auto 50px auto;
-    color: rgb(255 96 0);
-    font-size: 1.5rem;
-
-}
-
-.box-offers{
-    display: inline-flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: space-around;
-    height: 80%;
-    width: 100%;
-    text-align: center;
-}
-
-.box-food{
-    display: inline-flex;
-    flex-wrap: wrap;
-    height: 70%;
-    width: 25%;
-    justify-content: center;
-    align-content: space-around;
-    box-shadow: 0 0 5px 0px rgba(36, 35, 35, 0.399);
-    border-radius: 2vw;
-}
-
-.box-food-offer{
-    color: rgb(255 96 0);
-    display: inline-flex;
-    font-size: 4vw;
     position: relative;
-    height: fit-content;
-    width: 90%;
+    width: 70%;
+    height: 20%;
+    background-color:rgb(255 96 0);
+    border-radius: 1vw;
+    box-shadow: -2px 2px 10px 2px rgba(0, 0, 0, 0.281);
     justify-content: center;
-    
+    align-content: space-around;
+    flex-wrap: wrap;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    margin: 0 4vw;
 }
-
-.box-food-price{
-    color: rgb(41, 40, 40);
-    font-size: 4vw;
-    width: 50%;
-    height:fit-content;
-    margin: 0 2vh;
-    background-color: rgba(251, 140, 71, 0.848);
+.offers:hover{
+    transform: scale(1.1);
+}
+.offers svg{
+    position: absolute;
+    top: 0%;
+    width: 100%;
+}
+.offers img{
+    width: 15%;
+}
+.offers h2{
+    display: inline-flex;
+    position: relative;
+    width: 70%;
+    height: 12%;
+    margin: 1% 15%;
     border-radius: 2vw;
+    justify-content: center;
+    align-items: center;
+    background-color:  rgba(255, 255, 255, 0.336);
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: var(--pizza-font);
+}
+.offers p{
+    display: inline-flex;
+    position: relative;
+    width: 60%;
+    height: 20%;
+    margin: 0 15%;
+    font-size: 1.1rem;
     text-align: center;
-
+    justify-content: center;
 }
-
-.box-food img{
-    width: 35%;
-    
+.offers span{
+    display: inline-flex;
+    position: relative;
+    width: 20%;
+    height: 12%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-bottom: 4px solid white;
 }
-
-@media screen and (min-width : 550px){
-    .section__offers h2{
-        font-size: 2rem;
-        margin: 0 auto;
-    }
-
-    .box-food-price{
-        font-size: 3.5vw;
-        margin: 0 2vw;
-    }
-}
-
-@media screen and (min-width : 900px) {
-    .section__offers h2{
-        font-size: 2.5rem;
-    }
-
-    .box-food-price{
-        font-size: 3.5vw;
-        margin: 0 3vw;
-    }
+.offers span:hover{
+    background-color: #ffbc0d;
+    border-radius: .5vw;
+    border: none;
 }

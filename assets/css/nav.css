@@ -8,7 +8,7 @@ header{
     align-items: center;
     padding: 1vw;
     box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.322);
-    z-index: 10;
+    z-index: 50;
 }
 .nav__logo{
     display: inline-flex;
@@ -16,15 +16,23 @@ header{
     width: 70vw;
     height: 80%;
     justify-content: flex-start;
+    padding-top: 1.5vw;
     align-items: center;
+    align-content: flex-start;
     color: rgb(255 96 0);
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: var(--pizza-font);
 }
 .nav__logo img{
-    display: block;
-    height: 90%;
-    margin: 2vw;
+    display: inline-flex;
+    position: relative;
+    height: 100%;
+    margin: 0 3vw;
+    margin-bottom: 2vw;
+}
+.nav__logo h1{
+    
 }
 nav{
     display: none;
@@ -33,11 +41,11 @@ nav{
     height: 100vh;
     top: 0%;
     left: -100%;
-    background-color:white;
     justify-content:center;
     align-content: space-around;
     flex-wrap: wrap;
-    z-index: 10;
+    z-index: 20;
+    background-color: var(--color2);
 }
 .nav__icons{
     display: inline-flex;
@@ -105,7 +113,7 @@ nav{
     height: 4vh;
     transform: scale(1.2);
     border-radius: 2vw;
-    z-index: 10;
+    z-index: 20;
     cursor: pointer;
 }
 
@@ -127,16 +135,22 @@ nav{
 
 
 
-
+.position-fixed{
+    position: fixed;
+  }
 /*querys*/
 @media screen and (min-width:550px){
-    .nav__logo{font-size: 2rem;}
+    
+    .nav__logo{font-size: 1.2rem;}
     .menubtn{width: 5vw;}
     .nav__icon{width: 15%;}
     .nav__icons{width: 60%;}
 }
 @media screen and (min-width:900px){
     .menubtn{display: none;}
+    body{
+        font-size: 1.2rem;
+    }
     header{
         padding: 0;
         justify-content: space-between;
@@ -144,6 +158,7 @@ nav{
     .nav__logo{
         width: 35%;
         height: 100%;
+        font-size: 1.4rem;
     }
     nav{display: inline-flex;position: relative;left: initial;}
     nav{
